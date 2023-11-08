@@ -35,12 +35,10 @@ d3.dsv(";", "fatalities_isr_pse_conflict_2000_to_2023.csv").then(function (data)
         });
         console.log(counts);
         return counts;
-
     }
 
     const palestinianCounts = countFatalities(data, 'Palestinian');
     const israeliCounts = countFatalities(data, 'Israeli');
-
 
     const maxCount = Math.max(
         d3.max(Object.values(palestinianCounts)),
@@ -140,7 +138,6 @@ d3.dsv(";", "fatalities_isr_pse_conflict_2000_to_2023.csv").then(function (data)
 
     listeningRect.on("mousemove", showTooltip);
     listeningRect.on("mouseout", hideTooltip);
-
 
     svg.append("g")
         .call(d3.axisBottom(xScale)
